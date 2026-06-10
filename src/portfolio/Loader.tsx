@@ -33,7 +33,9 @@ export function Loader({ onDone }: { onDone: () => void }) {
       .to(line, { scaleX: 0, transformOrigin: "right center", duration: 0.5, ease: "power3.inOut" })
       .to(curtain, { y: "-100%", duration: 1.1, ease: "power4.inOut" }, "-=0.2")
       .set(root, { display: "none" });
-    return () => { tl.kill(); };
+    return () => {
+      tl.kill();
+    };
   }, [onDone]);
 
   return (
@@ -48,7 +50,10 @@ export function Loader({ onDone }: { onDone: () => void }) {
         ))}
       </div>
       <div className="loader__keyword">
-        Initialising · <b><span ref={keywordRef}>SYSTEMS</span></b>
+        Initialising ·{" "}
+        <b>
+          <span ref={keywordRef}>SYSTEMS</span>
+        </b>
       </div>
       <div className="loader__curtain" />
     </div>

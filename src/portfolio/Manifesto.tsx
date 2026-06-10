@@ -25,12 +25,13 @@ export function Manifesto() {
         scrollTrigger: {
           trigger: root,
           start: "top top",
-          end: "+=" + (STATEMENTS.length * 80) + "%",
+          end: "+=" + STATEMENTS.length * 80 + "%",
           pin: true,
           scrub: 0.6,
           onUpdate: (s) => {
             const idx = Math.min(STATEMENTS.length, Math.floor(s.progress * STATEMENTS.length) + 1);
-            if (counterRef.current) counterRef.current.textContent = `${String(idx).padStart(2, "0")} / ${String(STATEMENTS.length).padStart(2, "0")}`;
+            if (counterRef.current)
+              counterRef.current.textContent = `${String(idx).padStart(2, "0")} / ${String(STATEMENTS.length).padStart(2, "0")}`;
           },
         },
       });
@@ -48,9 +49,15 @@ export function Manifesto() {
     <section className="manifesto" id="manifesto" ref={rootRef}>
       <div className="manifesto__pin">
         <div className="manifesto__bg" />
-        <div className="manifesto__counter" ref={counterRef}>01 / {String(STATEMENTS.length).padStart(2, "0")}</div>
+        <div className="manifesto__counter" ref={counterRef}>
+          01 / {String(STATEMENTS.length).padStart(2, "0")}
+        </div>
         {STATEMENTS.map((s, i) => (
-          <p key={i} className="manifesto__statement" dangerouslySetInnerHTML={{ __html: s.text }} />
+          <p
+            key={i}
+            className="manifesto__statement"
+            dangerouslySetInnerHTML={{ __html: s.text }}
+          />
         ))}
       </div>
     </section>

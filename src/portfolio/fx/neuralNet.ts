@@ -1,15 +1,18 @@
 export function initNeuralNet(canvas: HTMLCanvasElement) {
   const ctx = canvas.getContext("2d")!;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let w = 0, h = 0;
+  let w = 0,
+    h = 0;
   type N = { x: number; y: number; r: number; layer: number; phase: number };
   let nodes: N[] = [];
   const layers = 4;
 
   function build() {
     const r = canvas.getBoundingClientRect();
-    w = r.width; h = r.height;
-    canvas.width = w * dpr; canvas.height = h * dpr;
+    w = r.width;
+    h = r.height;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     nodes = [];
     const perLayer = [3, 5, 5, 3];
@@ -27,7 +30,8 @@ export function initNeuralNet(canvas: HTMLCanvasElement) {
     }
   }
 
-  let t = 0, raf = 0;
+  let t = 0,
+    raf = 0;
   function tick() {
     t += 0.02;
     ctx.clearRect(0, 0, w, h);
@@ -68,7 +72,11 @@ export function initNeuralNet(canvas: HTMLCanvasElement) {
     }
     raf = requestAnimationFrame(tick);
   }
-  build(); tick();
+  build();
+  tick();
   window.addEventListener("resize", build);
-  return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", build); };
+  return () => {
+    cancelAnimationFrame(raf);
+    window.removeEventListener("resize", build);
+  };
 }

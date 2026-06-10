@@ -7,9 +7,17 @@ export function Cursor() {
     if (window.matchMedia("(pointer: coarse)").matches) return;
     const dot = dotRef.current!;
     const ring = ringRef.current!;
-    let dx = 0, dy = 0, rx = 0, ry = 0, mx = 0, my = 0;
+    let dx = 0,
+      dy = 0,
+      rx = 0,
+      ry = 0,
+      mx = 0,
+      my = 0;
     let raf = 0;
-    const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX;
+      my = e.clientY;
+    };
     const tick = () => {
       dx += (mx - dx) * 0.55;
       dy += (my - dy) * 0.55;

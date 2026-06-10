@@ -8,12 +8,30 @@ const CATS: { name: string; desc: string; items: string[] }[] = [
   {
     name: "Frontend",
     desc: "Building responsive and interactive user interfaces.",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design"],
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Responsive Design",
+    ],
   },
   {
     name: "Backend",
     desc: "Scalable APIs, authentication and real-time systems.",
-    items: ["Node.js", "Express.js", "REST APIs", "Socket.IO", "Authentication (JWT)", "FastAPI", "API Design"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Socket.IO",
+      "Authentication (JWT)",
+      "FastAPI",
+      "API Design",
+    ],
   },
   {
     name: "Databases",
@@ -43,24 +61,35 @@ export function Skills() {
     const ctx = gsap.context(() => {
       gsap.from(".skill-cell", {
         scrollTrigger: { trigger: ref.current, start: "top 70%" },
-        y: 60, opacity: 0, duration: 0.8, stagger: 0.08, ease: "power3.out",
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power3.out",
       });
       ref.current!.querySelectorAll<HTMLElement>(".skill-cell").forEach((cell) => {
         const counter = cell.querySelector<HTMLElement>(".skill-cell__count");
         const chips = cell.querySelectorAll<HTMLElement>(".skill-cell__chip");
         ScrollTrigger.create({
-          trigger: cell, start: "top 85%",
+          trigger: cell,
+          start: "top 85%",
           onEnter: () => {
             if (counter) {
               const v = Number(counter.dataset.val);
               const o = { n: 0 };
               gsap.to(o, {
-                n: v, duration: 1.2, ease: "power3.out",
+                n: v,
+                duration: 1.2,
+                ease: "power3.out",
                 onUpdate: () => (counter.textContent = String(Math.round(o.n)).padStart(2, "0")),
               });
             }
             gsap.from(chips, {
-              y: 12, opacity: 0, duration: 0.5, stagger: 0.04, ease: "power2.out",
+              y: 12,
+              opacity: 0,
+              duration: 0.5,
+              stagger: 0.04,
+              ease: "power2.out",
             });
           },
         });
@@ -79,15 +108,22 @@ export function Skills() {
             <div className="skill-cell__glow" />
             <div className="skill-cell__head">
               <span className="skill-cell__cat">{c.name}</span>
-              <div className="skill-cell__count-wrap" title={`${c.items.length} skills mapped in ${c.name}`}>
-                <span className="skill-cell__count" data-val={c.items.length}>00</span>
+              <div
+                className="skill-cell__count-wrap"
+                title={`${c.items.length} skills mapped in ${c.name}`}
+              >
+                <span className="skill-cell__count" data-val={c.items.length}>
+                  00
+                </span>
                 <span className="skill-cell__count-label">skills</span>
               </div>
             </div>
             <p className="skill-cell__desc">{c.desc}</p>
             <div className="skill-cell__items">
               {c.items.map((name) => (
-                <span key={name} className="skill-cell__chip">{name}</span>
+                <span key={name} className="skill-cell__chip">
+                  {name}
+                </span>
               ))}
             </div>
           </div>

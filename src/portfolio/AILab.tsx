@@ -22,10 +22,17 @@ export function AILab() {
     const ctx = gsap.context(() => {
       gsap.from(".ai__chip", {
         scrollTrigger: { trigger: ref.current, start: "top 70%" },
-        x: 60, opacity: 0, duration: 0.7, stagger: 0.08, ease: "power3.out",
+        x: 60,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power3.out",
       });
     }, ref);
-    return () => { stop(); ctx.revert(); };
+    return () => {
+      stop();
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -36,15 +43,18 @@ export function AILab() {
           <div className="section__num">06 / Intelligence Layer</div>
           <h2 className="section__title">AI, integrated smartly</h2>
           <p style={{ color: "var(--paper-dim)", maxWidth: 480, lineHeight: 1.6 }}>
-            I approach software engineering with a product-first mindset. 
-            While my core strength is building scalable full-stack web applications, 
-            I leverage modern orchestration tools like LangChain and n8n to integrate intelligent automations and AI features seamlessly into production environments.
+            I approach software engineering with a product-first mindset. While my core strength is
+            building scalable full-stack web applications, I leverage modern orchestration tools
+            like LangChain and n8n to integrate intelligent automations and AI features seamlessly
+            into production environments.
           </p>
         </div>
         <div className="ai__chips">
           {CHIPS.map(([a, b]) => (
             <div className="ai__chip" key={a}>
-              <span><b /> {a}</span>
+              <span>
+                <b /> {a}
+              </span>
               <span>{b}</span>
             </div>
           ))}

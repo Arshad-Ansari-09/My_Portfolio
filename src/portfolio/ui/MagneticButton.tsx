@@ -8,7 +8,14 @@ type Props = ComponentPropsWithoutRef<"a"> & {
   strength?: number;
 };
 
-export function MagneticButton({ children, ghost, liquid, strength = 0.35, className = "", ...rest }: Props) {
+export function MagneticButton({
+  children,
+  ghost,
+  liquid,
+  strength = 0.35,
+  className = "",
+  ...rest
+}: Props) {
   const ref = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     const el = ref.current!;
@@ -27,7 +34,9 @@ export function MagneticButton({ children, ghost, liquid, strength = 0.35, class
     };
   }, [strength]);
 
-  const cls = ["btn", "magnetic", ghost && "btn--ghost", liquid && "btn--liquid", className].filter(Boolean).join(" ");
+  const cls = ["btn", "magnetic", ghost && "btn--ghost", liquid && "btn--liquid", className]
+    .filter(Boolean)
+    .join(" ");
   return (
     <a ref={ref} className={cls} {...rest}>
       {children}

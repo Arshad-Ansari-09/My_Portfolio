@@ -34,7 +34,10 @@ export function Portfolio() {
     }
     const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     let rafId = 0;
-    const raf = (time: number) => { lenis.raf(time); rafId = requestAnimationFrame(raf); };
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
     rafId = requestAnimationFrame(raf);
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.lagSmoothing(0);
@@ -54,7 +57,9 @@ export function Portfolio() {
       <SectionIndicator />
 
       <nav className="nav">
-        <div className="nav__brand">ARSHAD<b>.</b>ANSARI</div>
+        <div className="nav__brand">
+          ARSHAD<b>.</b>ANSARI
+        </div>
         <div className="nav__links">
           <a href="#projects">Work</a>
           <a href="#arch">Architecture</a>

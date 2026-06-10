@@ -90,11 +90,7 @@ export function Architecture() {
       <h2 className="section__title">How the pieces fit.</h2>
 
       <div className="arch__diagram">
-        <svg
-          className="arch__svg"
-          viewBox="0 0 100 50"
-          preserveAspectRatio="xMidYMid meet"
-        >
+        <svg className="arch__svg" viewBox="0 0 100 50" preserveAspectRatio="xMidYMid meet">
           {EDGES.map(([a, b], i) => {
             const A = NODES.find((n) => n.id === a)!;
             const B = NODES.find((n) => n.id === b)!;
@@ -114,11 +110,7 @@ export function Architecture() {
         </svg>
 
         {NODES.map((n) => (
-          <div
-            key={n.id}
-            className="arch__node"
-            style={{ left: `${n.x}%`, top: `${n.y}%` }}
-          >
+          <div key={n.id} className="arch__node" style={{ left: `${n.x}%`, top: `${n.y}%` }}>
             <b>{n.label[0]}</b>
             <span>{n.label}</span>
             <i>{n.info}</i>

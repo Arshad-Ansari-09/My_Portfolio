@@ -78,17 +78,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Portfolio" },
-      { name: "description", content: "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience." },
+      {
+        name: "description",
+        content:
+          "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Portfolio" },
-      { property: "og:description", content: "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience." },
+      {
+        property: "og:description",
+        content:
+          "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Portfolio" },
-      { name: "twitter:description", content: "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d5200b7-d5d6-4618-852c-66a3230e916d/id-preview-cd1f34b2--210f3432-2516-4fb9-a298-e57f48316553.lovable.app-1780754378229.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d5200b7-d5d6-4618-852c-66a3230e916d/id-preview-cd1f34b2--210f3432-2516-4fb9-a298-e57f48316553.lovable.app-1780754378229.png" },
+      {
+        name: "twitter:description",
+        content:
+          "A premium, immersive portfolio website for software engineer Arshad Ansari, showcasing his systems expertise through a cinematic, story-driven experience.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d5200b7-d5d6-4618-852c-66a3230e916d/id-preview-cd1f34b2--210f3432-2516-4fb9-a298-e57f48316553.lovable.app-1780754378229.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d5200b7-d5d6-4618-852c-66a3230e916d/id-preview-cd1f34b2--210f3432-2516-4fb9-a298-e57f48316553.lovable.app-1780754378229.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

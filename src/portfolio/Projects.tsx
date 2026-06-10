@@ -57,7 +57,7 @@ export function Projects() {
           start: "top top",
           end: () => `+=${rail.scrollWidth - window.innerWidth}`,
           pin: true,
-          pinSpacing: true,        // ← FIX: prevents section collapse
+          pinSpacing: true, // ← FIX: prevents section collapse
           scrub: 0.5,
           invalidateOnRefresh: true,
           anticipatePin: 1,
@@ -110,7 +110,6 @@ export function Projects() {
           img.addEventListener("error", onImageLoad);
         }
       });
-
     }, section);
 
     return () => ctx.revert();
@@ -138,7 +137,12 @@ export function Projects() {
                 <img src={p.img} alt={p.title} loading="lazy" width={1600} height={1024} />
               </div>
               <div className="project-card__body">
-                <span className="project-card__num">Project {p.num} · <a href={p.projectUrl} target="_blank" title="Open in new tab" rel="noreferrer">Live↗</a></span>
+                <span className="project-card__num">
+                  Project {p.num} ·{" "}
+                  <a href={p.projectUrl} target="_blank" title="Open in new tab" rel="noreferrer">
+                    Live↗
+                  </a>
+                </span>
                 <h3 className="project-card__title">{p.title}</h3>
                 <p className="project-card__desc">{p.desc}</p>
                 <div className="project-card__stats">
